@@ -1,0 +1,356 @@
+/* تنسيق عام */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: url('photo_2024-10-20_05-21-31.jpg') no-repeat center center/cover;
+    /* تعيين الصورة كخلفية */
+    color: #34e89e;
+    line-height: 1.8;
+}
+
+/* شريط التنقل */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 300px;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* شفافية بسيطة */
+    opacity: 0;
+    transform: translateY(-200px);
+    animation: fadeInAndAssemble 1s forwards 0.5s;
+}
+
+.navbar .logo img {
+    width: 100px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: #34e89e;
+    /* تغيير لون الروابط للون الأخضر الفاتح */
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    background-color: #34e89e;
+    color: #000;
+    /* تغيير اللون للنص عند التمرير */
+}
+
+/* الحاوية */
+.login-container {
+    position: relative;
+    z-index: 10;
+    background-color: rgb(16 31 18 / 60%);
+    /* لون خلفية داكن وشفاف */
+    backdrop-filter: blure(10px);
+    border-radius: 15px;
+    padding: 20px;
+    width: 350px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    /* تأثير بلوري */
+    box-shadow: 0 15px 25px rgba(76 175 80 / 37%);
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInAndAssemble 1s forwards 1.5s;
+    position: relative;
+    top: 35px;
+    left: 596px;
+
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #34e89e;
+    /* استخدام اللون الأخضر */
+    opacity: 0;
+    animation: fadeIn 1s forwards 2s;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 15px;
+    opacity: 0;
+    animation: fadeIn 1s forwards 2.5s;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #34e89e;
+    font-size: 16px;
+    outline: none;
+    background: 0.3s ease;
+}
+
+.input-group input:focus {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #34e89e;
+    /* تغيير لون زر التسجيل */
+    border: none;
+    border-radius: 50px;
+    color: #000;
+    /* تغيير لون النص إلى الأسود */
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 1s forwards 3s;
+}
+
+.forgot-password {
+    margin-top: 10px;
+    color: #34e89e;
+    font-size: 14px;
+    opacity: 0;
+    animation: fadeIn 1s forwards 3.5s;
+}
+
+.alternative-login {
+    margin: 20px 0;
+    opacity: 0;
+    animation: fadeIn 1s forwards 4s;
+}
+
+.alternative-login p {
+    color: #34e89e;
+    font-size: 14px;
+}
+
+.social-login {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.social-btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.facebook {
+    background-color: #3b5998;
+}
+
+.google {
+    background-color: #db4437;
+}
+
+.twitter {
+    background-color: #1da1f2;
+}
+
+.social-btn:hover {
+    opacity: 0.8;
+}
+
+.language-selection {
+    margin-top: 15px;
+    color: #34e89e;
+    opacity: 0;
+    animation: fadeIn 1s forwards 4.5s;
+}
+
+.language-selection select {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(0 0 0 / 60%);
+    /* لون خلفية داكن وشفاف */
+    backdrop-filter: blure(10px);
+    color: #34e89e;
+    outline: none;
+}
+
+.forex-animation {
+
+    position: absolute;
+    bottom: 43px;
+    right: 42px;
+    opacity: 1px;
+    transform: scale(0.5);
+    animation: fadeInAndScaleUp 1s forwards 5s;
+}
+
+.animation {
+    width: 100px;
+    animation: moveUpDown 1s infinite alternate;
+    /* إضافة حركة صعود وهبوط */
+}
+
+/* الرسوم المتحركة للسهم */
+@keyframes moveUpDown {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-2px);
+        /* صعود 10 بيكسل */
+    }
+}
+
+
+
+.animation {
+    width: 100px;
+}
+
+/* الرسوم المتحركة */
+@keyframes fadeInAndAssemble {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* استجابة */
+@media (max-width: 768px) {
+    .login-container {
+        width: 100%;
+        margin: 20px;
+    }
+
+    .navbar {
+        padding: 20px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+.footer {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: #34e89e;
+}
+
+.register p a {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: aquamarine;
+
+}
+
+.forex-animation {
+
+    position: absolute;
+    bottom: 140px;
+    right: 42px;
+    opacity: 1px;
+    transform: scale(1);
+    animation: fadeInAndScaleUp 1s forwards 1s;
+}
+
+.forex-animation2 {
+
+    position: absolute;
+    bottom: 50px;
+    right: 42px;
+    opacity: 1px;
+    transform: scale(1);
+    animation: fadeInAndScaleUp 1s forwards 5s;
+}
+
+.forex-animation3 {
+
+    position: absolute;
+    bottom: 300px;
+    left: 220px;
+    opacity: 0.5;
+    transform: scale(3);
+    animation: fadeInAndScaleUp 20s forwards 5s;
+}
+
+.forex-animation4 {
+
+    position: absolute;
+    bottom: 120px;
+    left: 103px;
+    opacity: 0.5;
+    transform: scale(1);
+
+    text-align: center;
+}
+
+.animation2 {
+    width: 50px;
+    animation: moveUpDown 2s infinite alternate;
+    /* إضافة حركة صعود وهبوط */
+}
+
+.animation3 {
+    width: 50px;
+    /* animation: moveUpDown 10s infinite alternate; إضافة حركة صعود وهبوط */
+}
+
+/* الرسوم المتحركة للسهم */
+@keyframes moveUpDown {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-10px);
+        /* صعود 10 بيكسل */
+    }
+}
+
+.aa {
+    position: relative;
+    left: 180px;
+}
